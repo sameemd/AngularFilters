@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.14/angular.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="myApp">
+    <h1>Hello Plunker!</h1>
+    <div ng-controller="tabController">
+     <input type="text" ng-model="titleFilter" />
+     <input type="text" ng-model="userIdFilter" />
+      <table >
+        <tr ng-repeat="item in data | filter:{title:titleFilter, userId:userIdFilter}">
+          <td>{{item.userId}}</td>
+          <td>{{item.id}}</td>
+          <td>{{item.title}}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+
+</html>
